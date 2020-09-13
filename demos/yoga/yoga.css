@@ -486,7 +486,7 @@
 		height: auto;
 	}
 
-	.schedule-wrap dt { margin-bottom: 20px; }
+	.schedule-wrap dt { margin-bottom: 20px; padding-bottom: 20px;}
 
 	.text-title h3 img {
 		display: inline-block;

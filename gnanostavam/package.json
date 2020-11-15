@@ -1,0 +1,25 @@
+{
+  "name": "gnanotsavam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-gzip": "^1.4.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-purgecss": "^3.0.0",
+    "gulp-rollup": "^2.17.0",
+    "gulp-terser": "^1.4.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Santosh Subbarao",
+  "license": "ISC"
+}

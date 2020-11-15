@@ -23,7 +23,7 @@ function css(cb) {
             console.log(`${details.name}: ${details.stats.originalSize}`);
             console.log(`${details.name}: ${details.stats.minifiedSize}`);
         }))
-        .pipe(gzip({ append: false }))
+        // .pipe(gzip({ append: false }))
         .pipe(dest('output/'));
 }
 
@@ -33,7 +33,7 @@ function javascript(cb) {
     return src(['assets/js/*.js'])
         .pipe(concat('main.js'))
         .pipe(terser())
-        .pipe(gzip({ append: false }))
+        // .pipe(gzip({ append: false }))
         .pipe(dest('output/'));
 }
 

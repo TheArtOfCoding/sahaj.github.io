@@ -101,6 +101,15 @@
     }
 }
 
+@media (max-width: 767.98px) {
+    .bg-mb {
+        background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .2)), url('../images/gmob.png') no-repeat center center / cover !important;
+    }
+    .t-center {
+        text-align: center !important;
+    }
+}
+
 
 /* ----------------------------------------------------------------
 	Basic

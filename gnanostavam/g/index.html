@@ -4,7 +4,7 @@
 <head>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="SemiColonWeb" />
+    <meta name="author" content="The Art of Living" />
 
     <!-- Stylesheets
 	============================================= -->
@@ -29,7 +29,7 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Conference | Canvas</title>
+    <title>Gnanotsavam | The Art of Living</title>
 
 </head>
 
@@ -142,25 +142,25 @@
 
                                 <ul class="tab-nav d-flex clearfix">
                                     <li class="flex-fill">
-                                        <a href="#tabs-1"><span class="d-d-none">UY</span><span class="d-none d-md-inline-block">Utkarsh Yoga</span></a>
+                                        <a id="uy" href="#tabs-1"><span class="d-d-none">UY</span><span class="d-none d-md-inline-block">Utkarsh Yoga</span></a>
                                     </li>
                                     <li class="flex-fill">
-                                        <a href="#tabs-2"><span class="d-d-none">MY</span><span class="d-none d-md-inline-block">Medha Yoga</span></a>
+                                        <a id="my" href="#tabs-2"><span class="d-d-none">MY</span><span class="d-none d-md-inline-block">Medha Yoga</span></a>
                                     </li>
                                     <li class="flex-fill">
-                                        <a href="#tabs-3"><span class="d-d-none">Sahaj</span><span class="d-none d-md-inline-block">Sahaj</span></a>
+                                        <a id="sahaj" href="#tabs-3"><span class="d-d-none">Sahaj</span><span class="d-none d-md-inline-block">Sahaj</span></a>
                                     </li>
                                     <li class="flex-fill">
-                                        <a href="#tabs-4"><span class="d-d-none">OMBW</span><span class="d-none d-md-inline-block">OMBW</span></a>
+                                        <a id="ombw" href="#tabs-4"><span class="d-d-none">OMBW</span><span class="d-none d-md-inline-block">OMBW</span></a>
                                     </li>
                                     <li class="flex-fill">
-                                        <a href="#tabs-5"><span class="d-d-none">SSY</span><span class="d-none d-md-inline-block">Sri Sri Yoga</span></a>
+                                        <a id="ssy" href="#tabs-5"><span class="d-d-none">SSY</span><span class="d-none d-md-inline-block">Sri Sri Yoga</span></a>
                                     </li>
                                     <li class="flex-fill">
-                                        <a href="#tabs-6"><span class="d-d-none">Spine Care</span><span class="d-none d-md-inline-block">Spine Care</span></a>
+                                        <a id="spinecare" href="#tabs-6"><span class="d-d-none">Spine Care</span><span class="d-none d-md-inline-block">Spine Care</span></a>
                                     </li>
                                     <li class="flex-fill">
-                                        <a href="#tabs-7"><span class="d-d-none">Wellness</span><span class="d-none d-md-inline-block">Wellness</span></a>
+                                        <a id="wellness" href="#tabs-7"><span class="d-d-none">Wellness</span><span class="d-none d-md-inline-block">Wellness</span></a>
                                     </li>
                                 </ul>
 
@@ -336,6 +336,18 @@
                 element2Day = $("#2-day-pricing-person"),
                 elementFull = $("#full-pricing-person");
 
+            var list_of_courses = ["uy", "my", "sahaj", "ombw", "ssy", "spinecare", "wellness"];
+            var c = getUrlParameter('c');
+
+            if (c && list_of_courses.indexOf(c) > -1) {
+                $('html, body').animate({
+                    scrollTop: $("#section-schedule").offset().top
+                }, 2000);
+                var tab = $(`#${c}`);
+                console.log(tab[0]);
+                $(tab)[0].click();
+            }
+
             elementEarlyBird.on('change', function() {
                 pricingEarlyBird = $(this).prop('value');
                 jQuery('.early-bird-pricing').html('$' + (pricingEarlyBird * 39));
@@ -357,6 +369,21 @@
             });
 
         });
+
+        function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]).toLowerCase();
+                }
+            }
+        };
     </script>
 
 </body>

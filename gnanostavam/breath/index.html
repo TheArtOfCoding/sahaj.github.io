@@ -258,7 +258,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="phone">Phone:</label>
-                                            <input type="tel" name="phone" id="form-availability-phone" class="required form-control rounded input-block-level" value="" placeholder="123-45-678" maxlength="12" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                                            <input type="tel" name="phone" id="form-availability-phone" class="required form-control rounded input-block-level" value="" placeholder="9999999999" maxlength="12" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
                                         </div>
                                         <div class="form-group">
                                             <label for="email">Email Address<small class="text-danger">*</small></label>
@@ -267,12 +267,14 @@
                                         <div class="form-group">
                                             <label for="selectpicker">Select Date<small class="text-danger">*</small></label>
                                             <select id="form-availability-selectpicker" name="selectpicker" class="selectpicker required form-control rounded email input-block-level">
-                                            <option>21st November, 2020</option>
-                                            <option>22nd November, 2020</option>
-                                            <option>23rd November, 2020</option>
+                                            <option>17th December, 2020</option>
+                                            <option>18th December, 2020</option>
+                                            <option>19th December, 2020</option>
                                           </select>
                                         </div>
                                         <input type="text" class="d-none" id="form-availability-botcheck" name="form-availability-botcheck" value="" />
+                                        <span id="form-error" style="font-style: italic;color: red;"></span>
+                                        <span id="form-sucess" style="font-style: italic;color: green;"></span>
                                         <input type="hidden" name="prefix" value="form-availability-">
                                         <button type="submit" id="form-availability-submit" name="form-availability-submit" class="btn rounded bg-color text-white shadow text-uppercase ls1 w-100" value="submit">Register for Demo</button>
                                     </form>
@@ -739,26 +741,49 @@
                 data[each['name']] = each['value'] || ''
             });
             console.log(data);
-            data = {
-                "email": "ds1@ds.com"
+            console.log(ValidateEmail(data['form-availability-email']))
+            console.log(phonenumber(data['phone']))
+                // data = {
+                //     "email": "ds1@ds.com"
+                // }
+            if (data['name'] === '' || !ValidateEmail(data['form-availability-email']) || !phonenumber(data['phone'])) {
+                console.log(document.getElementById("form-error"));
+                document.getElementById("form-error").textContent = (data['name'] === '' && 'Enter Name') || (!ValidateEmail(data['form-availability-email']) && 'Invalid Email') || (!phonenumber(data['phone']) && 'Invalid Phone Number')
+                return false;
             }
+            document.getElementById("form-error").textContent = '';
             $.ajax({
                 type: "POST",
-                url: `https://api.hsforms.com/submissions/v3/integration/submit/8155294/28c97e9c-407c-4727-8341-4469587a4630`,
+                url: `https://api.hsforms.com/submissions/v3/integration/submit/7932845/664deebc-9e7d-4cf8-9748-4facf9260df5`,
                 data: JSON.stringify({
                     "fields": [{
+                        "name": "firstname",
+                        "value": data['name']
+                    }, {
                         "name": "email",
-                        "value": "example1@example.com"
+                        "value": data['form-availability-email']
                     }, {
                         "name": "phone",
-                        "value": "9999991"
+                        "value": data['phone']
+                    }, {
+                        "name": "date",
+                        "value": data['selectpicker']
+                    }, {
+                        "name": "hs_lead_status",
+                        "value": 'Register for Introtalk'
                     }],
                     "skipValidation": true
                 }),
                 dataType: 'json',
                 contentType: 'application/json',
                 success: ((msg) => {
+                    document.getElementById("form-sucess").textContent = msg.inlineMessage;
                     console.log('success');
+                    console.log(msg);
+                    form.reset();
+                }),
+                error: ((msg) => {
+                    console.log('error');
                     console.log(msg);
                 })
             });
@@ -816,6 +841,25 @@
                 default_offset_pct: 0.5
             });
         });
+
+        function ValidateEmail(mail) {
+            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+                return (true)
+            }
+            // alert("You have entered an invalid email address!")
+            return (false)
+        }
+
+        function phonenumber(inputtxt) {
+            inputtxt = inputtxt.replace('+91', '');
+            var phoneno = /^\d{10}$/;
+            if (inputtxt && inputtxt !== '' && inputtxt.match(phoneno)) {
+                return true;
+            } else {
+                // alert("message");
+                return false;
+            }
+        }
     </script>
 
 </body>

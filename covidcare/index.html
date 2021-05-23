@@ -32,9 +32,12 @@
 	<link rel="stylesheet" href="css/custom.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!-- Document Title
-	============================================= -->
+	<!-- Document Title	============================================= -->
 	<title>Global Sahaj Samadhi</title>
+	
+	<!-- Loading Courses JSON data - Start-->
+	<script type="text/javascript" src="data.json"></script>
+	<!-- Loading Courses JSON data - End-->
 
 </head>
 
@@ -267,7 +270,105 @@
 							</div>
 					</div>
 				</div>
+				
+<div class="container"> 
+      <table id="my_table" class="table"> 
+		</table> 
+    </div> 
 
+<script>
+//var courses_data = JSON.parse("data.json");
+//var courses_data = data
+//console.log('============= courses_data ================',courses_data)
+</script>
+
+
+<script> 
+
+let data = [
+        {
+            "ID": "0KE034",
+            "Registration Url": "aolt.in/559447",
+            "Teachers": "Jalaja Reddy Muthyala(TS0123), Sailaja Reddy Epur(TS0192), Padma Pulluru(TS0193), SANDHYA RANI(TS0128)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "12:00 PM - 12:30 PM",
+            "Phone": "9618448199",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE032",
+            "Registration Url": "aolt.in/559444",
+            "Teachers": "Tirunahari Prasad(AP0369), Sravan reddy(TS0052)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "06:30 PM - 07:15 PM",
+            "Phone": "8639574251",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE031",
+            "Registration Url": "aolt.in/559329",
+            "Teachers": "Parankusham Swamy(TS0109)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "07:30 PM - 08:15 PM",
+            "Phone": "7730073444",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE027",
+            "Registration Url": "aolt.in/559155",
+            "Teachers": "Naveen Kolli(TS0163)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "06:30 AM - 07:15 AM",
+            "Phone": "9985104123",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE026",
+            "Registration Url": "aolt.in/559143",
+            "Teachers": "Kiran Pedamallu(TS0164)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "08:30 AM - 09:00 AM",
+            "Phone": "7702214598",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE015",
+            "Registration Url": "aolt.in/558935",
+            "Teachers": "Madhukar Sistla(TS0108)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "06:00 PM - 06:30 PM",
+            "Phone": "9177905078",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE013",
+            "Registration Url": "aolt.in/558863",
+            "Teachers": "Shashi Mehta(AP0168), Sainath Bommalakunta(TS0030)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "07:00 PM - 07:45 PM",
+            "Phone": "8142358165",
+            "Languages": "English"
+        }]
+var local_data = data; 
+var row_data = ''; 
+for (var i = 0; i < local_data.length; i++) { 
+  var row_data = row_data + '<tr>' + 
+	' <td>' + local_data[i]['Start Date'] + ' - ' + local_data[i]['End Date'] + '</td>' + 
+	' <td>' + local_data[i].Teachers + ' <br/>'+ local_data[i].Languages + '</td>' + 
+	' <td>Register</td>' + 
+	'</tr>'; 
+} 
+var table_body_element = document.createElement('tbody'); 
+table_body_element.innerHTML = row_data; 
+document.getElementById('my_table').appendChild(table_body_element); 
+</script>
 				
 
 				
@@ -334,7 +435,7 @@
 	<!-- Footer Scripts
 	============================================= -->
 	<script src="js/functions.js"></script>
-
+	
 	<script>
 		// Owl Carousel Scripts
 		jQuery(window).on( 'pluginCarouselReady', function(){

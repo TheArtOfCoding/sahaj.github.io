@@ -191,77 +191,103 @@
 							
 							<div class="table-responsive custom-table-responsive">
 
-        <table class="table custom-table">
+        <table class="table custom-table" id="my_table2">
           <thead>
-            <tr>  
-
-              
-              <th scope="col">Program Date</th>              
-              <th scope="col">Program Name</th>
-              <th scope="col">Course Info</th>
+            <tr>
+			  <th scope="col">Date & Timings</th> 
+			  <th scope="col">Program Name</th>
+              <th scope="col">Teachers</th>
               <th scope="col">Register</th>
             </tr>
           </thead>
-          <tbody>
-            <tr scope="row">
-              <td><b>22-24 May, 2021</b><small class="d-block">SAT, SUN 10:45 AM - 12:30 AM<br/>MON 10:45 AM - 12:30 PM</small></td>
-              <td><b>Post Covid Recovery Program -<br/> Meditation, Breath and Yoga</b></td>
-              <td><b>Hyderabad</b> <br/><small class="d-block">Online <br/>Course Language : English</small> </td>
-              <td>
-				<div class="field-item even">
-					<p style="text-align: center;">
-						<!--<a class="yellow-button" href="#admin-element-621309">Register now</a>-->
-						<a href="#" target="_blank" class="btn rounded high-index bg-color text-white text-uppercase font-weight-semibold ls1 py-2 px-4">Register</a>
-					</p>
-				</div>
-			  </td>			 
-			 </tr>
-            <tr class="spacer"><td colspan="100"></td></tr>
-            <tr>
-              <td><b>22-24 May, 2021</b> <small class="d-block">MON 11:00 AM - 11:30 AM </small></td>
-              <td><b>Immunity Enhancement Program -<br/> Meditation, Breath and Yoga</b></td>
-              <td><b>Hyderabad</b> <br/><small class="d-block">Online <br/>Course Language : English</small> </td>
-              <td>
-				<div class="field-item even">
-					<p style="text-align: center;">
-						<!--<a class="yellow-button" href="#admin-element-621309">Register now</a>-->
-						<a href="#" target="_blank" class="btn rounded high-index bg-color text-white text-uppercase font-weight-semibold ls1 py-2 px-4">Register</a>
-					</p>
-				</div>
-			  </td>
-            </tr>
-            <tr class="spacer"><td colspan="100"></td></tr>
-            <tr>
-			  <td><b>24-26 May, 2021</b><small class="d-block">Weekdays 07:00 PM - 07:45 PM</small></td>
-              <td><b>Immunity Enhancement Program -<br/> Meditation, Breath and Yoga</b></td>
-              <td><b>Tirumalagiri</b> <br/><small class="d-block">Online <br/>Course Language : English</small> </td>
-              <td>
-				<div class="field-item even">
-					<p style="text-align: center;">
-						<!--<a class="yellow-button" href="#admin-element-621309">Register now</a>-->
-						<a href="#" target="_blank" class="btn rounded high-index bg-color text-white text-uppercase font-weight-semibold ls1 py-2 px-4">Register</a>
-					</p>
-				</div>
-			  </td>
-            </tr>
-            <tr class="spacer"><td colspan="100"></td></tr>
-            <tr>              
-              <td><b>4-6 Jun, 2021</b><small class="d-block">FRI 11:00 AM - 11:30 AM</small></td>
-              <td><b>Covid Recovery Program -<br/> Meditation, Breath and Yoga</b></td>
-              <td><b>Hyderabad</b> <br/><small class="d-block">Online <br/>Course Language : English</small> </td>
-              <td>
-				<div class="field-item even">
-					<p style="text-align: center;">
-						<!--<a class="yellow-button" href="#admin-element-621309">Register now</a>-->
-						<a href="#" target="_blank" class="btn rounded high-index bg-color text-white text-uppercase font-weight-semibold ls1 py-2 px-4">Register</a>
-					</p>
-				</div>
-			  </td>
-			</tr>
-           
-            </tr>
-            
-          </tbody>
+          <script> 
+
+let data = [
+        {
+            "ID": "0KE034",
+            "Registration Url": "aolt.in/559447",
+            "Teachers": "Jalaja Reddy Muthyala(TS0123), Sailaja Reddy Epur(TS0192), Padma Pulluru(TS0193), SANDHYA RANI(TS0128)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "12:00 PM - 12:30 PM",
+            "Phone": "9618448199",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE032",
+            "Registration Url": "aolt.in/559444",
+            "Teachers": "Tirunahari Prasad(AP0369), Sravan reddy(TS0052)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "06:30 PM - 07:15 PM",
+            "Phone": "8639574251",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE031",
+            "Registration Url": "aolt.in/559329",
+            "Teachers": "Parankusham Swamy(TS0109)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "07:30 PM - 08:15 PM",
+            "Phone": "7730073444",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE027",
+            "Registration Url": "aolt.in/559155",
+            "Teachers": "Naveen Kolli(TS0163)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "06:30 AM - 07:15 AM",
+            "Phone": "9985104123",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE026",
+            "Registration Url": "aolt.in/559143",
+            "Teachers": "Kiran Pedamallu(TS0164)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "08:30 AM - 09:00 AM",
+            "Phone": "7702214598",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE015",
+            "Registration Url": "aolt.in/558935",
+            "Teachers": "Madhukar Sistla(TS0108)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "06:00 PM - 06:30 PM",
+            "Phone": "9177905078",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE013",
+            "Registration Url": "aolt.in/558863",
+            "Teachers": "Shashi Mehta(AP0168), Sainath Bommalakunta(TS0030)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "07:00 PM - 07:45 PM",
+            "Phone": "8142358165",
+            "Languages": "English"
+        }]
+var local_data = data; 
+var row_data = ''; 
+for (var i = 0; i < local_data.length; i++) { 
+  var row_data = row_data + '<tr>' + 
+	' <td><b>' + local_data[i]['Start Date'] + ' - ' + local_data[i]['End Date'] + '</b><small class="d-block">' + local_data[i]['Weekday Timings'] +'</small></td>' + 
+	' <td><b>' + '' +  'Program -<br/> Meditation, Breath and Yoga</b></td>' + 
+	' <td>' + local_data[i].Teachers.split(',') + ' <br/><small class="d-block">Online <br/>Course Language : '+ local_data[i].Languages+ '</small></td>' + 
+	' <td> <div class="field-item even"><p style="text-align: center;"><a href="https://www.' + local_data[i]["Registration Url"] +
+						'" target="_blank" class="btn rounded high-index bg-color text-white text-wrap ls1 py-2 px-4">Register_Now</a></p></div></td>' + 
+	'</tr>'; 
+} 
+var table_body_element = document.createElement('tbody'); 
+table_body_element.innerHTML = row_data; 
+document.getElementById('my_table2').appendChild(table_body_element); 
+</script>
         </table>
       </div>
 
@@ -271,11 +297,6 @@
 					</div>
 				</div>
 				
-<div class="container"> 
-      <table id="my_table" class="table"> 
-		</table> 
-    </div> 
-
 <script>
 //var courses_data = JSON.parse("data.json");
 //var courses_data = data
@@ -360,9 +381,11 @@ var local_data = data;
 var row_data = ''; 
 for (var i = 0; i < local_data.length; i++) { 
   var row_data = row_data + '<tr>' + 
-	' <td>' + local_data[i]['Start Date'] + ' - ' + local_data[i]['End Date'] + '</td>' + 
-	' <td>' + local_data[i].Teachers + ' <br/>'+ local_data[i].Languages + '</td>' + 
-	' <td>Register</td>' + 
+	' <td><b>' + local_data[i]['Start Date'] + ' - ' + local_data[i]['End Date'] + '</b><small class="d-block">' + local_data[i]['Weekday Timings'] +'</small></td>' + 
+	' <td><b>' + '' +  'Program -<br/> Meditation, Breath and Yoga</b></td>' + 
+	' <td>' + local_data[i].Teachers.split(',') + ' <br/><small class="d-block">Online <br/>Course Language : '+ local_data[i].Languages+ '</small></td>' + 
+	' <td> <div class="field-item even"><p style="text-align: center;"><a href="https://www.' + local_data[i]["Registration Url"] +
+						'" target="_blank" class="btn rounded high-index bg-color text-white text-wrap ls1 py-2 px-4">Register_Now</a></p></div></td>' + 
 	'</tr>'; 
 } 
 var table_body_element = document.createElement('tbody'); 

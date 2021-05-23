@@ -34,10 +34,10 @@
 
 	<!-- Document Title	============================================= -->
 	<title>Global Sahaj Samadhi</title>
-	
-	<!-- Loading Courses JSON data - Start-->
-	<script type="text/javascript" src="data.json"></script>
-	<!-- Loading Courses JSON data - End-->
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
 
 </head>
 
@@ -202,10 +202,11 @@
           </thead>
           <script> 
 
-let data = [
-        {
+let courses_data = [ 
+		{
             "ID": "0KE034",
             "Registration Url": "aolt.in/559447",
+            "ProgramName": "Immunity Enhancement",
             "Teachers": "Jalaja Reddy Muthyala(TS0123), Sailaja Reddy Epur(TS0192), Padma Pulluru(TS0193), SANDHYA RANI(TS0128)",
             "Start Date": "19-May-21",
             "End Date": "21-May-21",
@@ -216,6 +217,7 @@ let data = [
         {
             "ID": "0KE032",
             "Registration Url": "aolt.in/559444",
+            "ProgramName": "Immunity Enhancement",
             "Teachers": "Tirunahari Prasad(AP0369), Sravan reddy(TS0052)",
             "Start Date": "20-May-21",
             "End Date": "22-May-21",
@@ -226,6 +228,7 @@ let data = [
         {
             "ID": "0KE031",
             "Registration Url": "aolt.in/559329",
+            "ProgramName": "Immunity Enhancement",
             "Teachers": "Parankusham Swamy(TS0109)",
             "Start Date": "20-May-21",
             "End Date": "22-May-21",
@@ -236,6 +239,7 @@ let data = [
         {
             "ID": "0KE027",
             "Registration Url": "aolt.in/559155",
+            "ProgramName": "Immunity Enhancement",
             "Teachers": "Naveen Kolli(TS0163)",
             "Start Date": "19-May-21",
             "End Date": "21-May-21",
@@ -246,6 +250,7 @@ let data = [
         {
             "ID": "0KE026",
             "Registration Url": "aolt.in/559143",
+            "ProgramName": "Immunity Enhancement",
             "Teachers": "Kiran Pedamallu(TS0164)",
             "Start Date": "21-May-21",
             "End Date": "23-May-21",
@@ -256,6 +261,7 @@ let data = [
         {
             "ID": "0KE015",
             "Registration Url": "aolt.in/558935",
+            "ProgramName": "Immunity Enhancement",
             "Teachers": "Madhukar Sistla(TS0108)",
             "Start Date": "20-May-21",
             "End Date": "22-May-21",
@@ -266,136 +272,1445 @@ let data = [
         {
             "ID": "0KE013",
             "Registration Url": "aolt.in/558863",
+            "ProgramName": "Immunity Enhancement",
             "Teachers": "Shashi Mehta(AP0168), Sainath Bommalakunta(TS0030)",
             "Start Date": "24-May-21",
             "End Date": "26-May-21",
             "Weekday Timings": "07:00 PM - 07:45 PM",
             "Phone": "8142358165",
             "Languages": "English"
-        }]
-var local_data = data; 
+        },
+        {
+            "ID": "0KE012",
+            "Registration Url": "aolt.in/558861",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Shashi Mehta(AP0168), Sainath Bommalakunta(TS0030)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "07:30 AM - 08:15 AM",
+            "Phone": "8142358165",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE008",
+            "Registration Url": "aolt.in/558812",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Gulari Varalaxmi(AP0568)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "09:30 AM - 10:00 AM",
+            "Phone": "9246266738",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD998",
+            "Registration Url": "aolt.in/558594",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Malathi Ramachandran(AP0324), Tippani Manjula(AP0137), Nagamani Nalamala(AP0034)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "06:00 PM - 06:30 PM",
+            "Phone": "9848124598",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD986",
+            "Registration Url": "aolt.in/558408",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Shailaja Borpatla(TS0013), Jandhyala Venkata Krishna(TS0058), Mahesh Mamilla(TS0118)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "09:00 AM - 09:45 AM",
+            "Phone": "7675975250",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KD952",
+            "Registration Url": "aolt.in/557748",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Manoj Kumar E.(AP0616), Bindu Menon Raj(AP0301)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "09:00 AM - 09:45 AM",
+            "Phone": "9849377711",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD941",
+            "Registration Url": "aolt.in/557580",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Ramesh Kasturi(AP0131)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "08:30 AM - 09:00 AM",
+            "Phone": "9848242467",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KD878",
+            "Registration Url": "aolt.in/556295",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "maroju sharada(AP0581)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Phone": "9246806360",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD865",
+            "Registration Url": "aolt.in/556021",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Shalini Sharma(MH3960), Nischala K(TS0106)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "06:30 AM - 07:00 AM",
+            "Phone": "9515100379",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD849",
+            "Registration Url": "aolt.in/555830",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "14-Jun-21",
+            "End Date": "16-Jun-21",
+            "Weekday Timings": "07:00 AM - 07:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD846",
+            "Registration Url": "aolt.in/555738",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "sricharan vadapalli(AP0611)",
+            "Start Date": "29-May-21",
+            "End Date": "31-May-21",
+            "Weekday Timings": "07:00 AM - 07:45 AM",
+            "Phone": "8886508822",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD811",
+            "Registration Url": "aolt.in/555122",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Veena Srinivasan(AP0184), Sainath Bommalakunta(TS0030)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "06:30 PM - 07:15 PM",
+            "Phone": "8142358165",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD810",
+            "Registration Url": "aolt.in/555117",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Veena Srinivasan(AP0184), Sainath Bommalakunta(TS0030)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "07:30 AM - 08:15 AM",
+            "Phone": "8142358165",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD787",
+            "Registration Url": "aolt.in/554858",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "11-Jun-21",
+            "End Date": "13-Jun-21",
+            "Weekday Timings": "07:00 AM - 07:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD784",
+            "Registration Url": "aolt.in/554853",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "7-Jun-21",
+            "End Date": "9-Jun-21",
+            "Weekday Timings": "07:00 AM - 07:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD778",
+            "Registration Url": "aolt.in/554802",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "4-Jun-21",
+            "End Date": "6-Jun-21",
+            "Weekday Timings": "07:00 AM - 07:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD775",
+            "Registration Url": "aolt.in/554796",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "31-May-21",
+            "End Date": "2-Jun-21",
+            "Weekday Timings": "07:00 AM - 07:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD772",
+            "Registration Url": "aolt.in/554792",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Lakshmi A. G.(AP0255), Lakshmi Nanduri(AP0414)",
+            "Start Date": "28-May-21",
+            "End Date": "30-May-21",
+            "Weekday Timings": "07:00 AM - 07:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD751",
+            "Registration Url": "aolt.in/554257",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "DHARMENDRA CHAUHAN(TS0046)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "07:30 PM - 08:00 PM",
+            "Phone": "9703346600",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD609",
+            "Registration Url": "aolt.in/552292",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "07:00 AM - 07:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD458",
+            "Registration Url": "aolt.in/549353",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Lakshmi A. G.(AP0255), Lakshmi Nanduri(AP0414)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "07:00 AM - 07:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD609",
+            "Registration Url": "aolt.in/552292",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Lakshmi A. G.(AP0255), Lakshmi Nanduri(AP0414)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "07:00 AM - 07:40 AM",
+            "Phone": "9850000000",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE159",
+            "Registration Url": "aolt.in/562281",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Kranti Y.(AP0019)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "05:30 PM - 06:15 PM",
+            "Phone": "9866477876",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE157",
+            "Registration Url": "aolt.in/562221",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Nikhila Kongara(AP0238), Karuna Munshi(TS0115)",
+            "Start Date": "31-May-21",
+            "End Date": "02-Jun-21",
+            "Weekday Timings": "06:00 PM - 07:00 PM",
+            "Phone": "9618403374",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE140",
+            "Registration Url": "aolt.in/561870",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Sonal Shah(AP0254), Jugal Rathi(AP0058), Samarth Rathi(AP0246), Sanjaykumar Shah(AP0169), SHOBHA RATHI(AP0033), Shruti Rathi(AP0478), Shilpa Rana(TS0111), Neha Rathi(AP0050)",
+            "Start Date": "28-May-21",
+            "End Date": "30-May-21",
+            "Weekday Timings": "04:00 PM - 04:45 PM",
+            "Phone": "9908846321",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KE135",
+            "Registration Url": "aolt.in/561750",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Vani P.(MH0960)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "07:00 AM - 07:45 AM",
+            "Phone": "9133425739",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE134",
+            "Registration Url": "aolt.in/561745",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Lavanya N(TS0201)",
+            "Start Date": "22-May-21",
+            "End Date": "24-May-21",
+            "Weekday Timings": "05:30 PM - 06:00 PM",
+            "Phone": "9963229955",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE133",
+            "Registration Url": "aolt.in/561744",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Lavanya N(TS0201)",
+            "Start Date": "23-May-21",
+            "End Date": "25-May-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Phone": "9963229955",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE132",
+            "Registration Url": "aolt.in/561739",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Sangeeta Harindrawar(AP0576)",
+            "Start Date": "23-May-21",
+            "End Date": "25-May-21",
+            "Weekday Timings": "05:00 PM - 05:30 PM",
+            "Phone": "7382612826",
+            "Languages": "Hindi"
+        },
+        {
+            "ID": "0KE131",
+            "Registration Url": "aolt.in/561738",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Sangeeta Harindrawar(AP0576)",
+            "Start Date": "23-May-21",
+            "End Date": "25-May-21",
+            "Weekday Timings": "05:00 PM - 05:30 PM",
+            "Phone": "7382612826",
+            "Languages": "Hindi"
+        },
+        {
+            "ID": "0KE127",
+            "Registration Url": "aolt.in/561622",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Bina Ramgopal(AP0247), SUPRIYA Ramgopal(TS0121), Vijaya Lakshmi Mylavarapu(TS0180)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "11:00 AM - 11:45 AM",
+            "Phone": "8179231632",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE125",
+            "Registration Url": "aolt.in/561576",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Nikhila Kongara(AP0238), Karuna Munshi(TS0115)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "04:30 PM - 05:30 PM",
+            "Phone": "9618403374",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE118",
+            "Registration Url": "aolt.in/561407",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Puritipati Bhargavi(TS0088)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "06:00 PM - 06:30 PM",
+            "Weekend Timings": "06:00 PM - 06:30 PM",
+            "Phone": "8790731447",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE104",
+            "Registration Url": "aolt.in/561149",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Gulari Mallesham Goud(AP0463)",
+            "Start Date": "28-May-21",
+            "End Date": "30-May-21",
+            "Weekday Timings": "09:30 AM - 10:00 AM",
+            "Phone": "9246266738",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE102",
+            "Registration Url": "aolt.in/561128",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Uma C(TS0051)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "12:00 PM - 12:45 PM",
+            "Phone": "9440196185",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE097",
+            "Registration Url": "aolt.in/560976",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Tirunahari Prasad(AP0369), Niveditha Samudrala(KR1213), Sravan reddy(TS0052)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "06:30 PM - 07:15 PM",
+            "Phone": "6302929422",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE094",
+            "Registration Url": "aolt.in/560966",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Tirunahari Prasad(AP0369), Niveditha Samudrala(KR1213), Sravan reddy(TS0052)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "06:00 AM - 06:45 AM",
+            "Phone": "8639574251",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE090",
+            "Registration Url": "aolt.in/560899",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Srinivasa T.(AP0031)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "06:00 PM - 06:30 PM",
+            "Weekend Timings": "06:00 PM - 06:30 PM",
+            "Phone": "9000573672",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE089",
+            "Registration Url": "aolt.in/560895",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Srinivasa T.(AP0031)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "05:00 PM - 05:30 PM",
+            "Weekend Timings": "05:00 PM - 05:30 PM",
+            "Phone": "9000573672",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE088",
+            "Registration Url": "aolt.in/560893",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Srinivasa T.(AP0031)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "12:00 PM - 12:30 PM",
+            "Weekend Timings": "12:00 PM - 12:30 PM",
+            "Phone": "9000573672",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE087",
+            "Registration Url": "aolt.in/560891",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Srinivasa T.(AP0031)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Weekend Timings": "11:00 AM - 11:30 AM",
+            "Phone": "9000573672",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE086",
+            "Registration Url": "aolt.in/560890",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Srinivasa T.(AP0031)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "10:00 AM - 10:30 AM",
+            "Weekend Timings": "10:00 AM - 10:30 AM",
+            "Phone": "9000573672",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE080",
+            "Registration Url": "aolt.in/560703",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Gulari Varalaxmi(AP0568)",
+            "Start Date": "27-May-21",
+            "End Date": "29-May-21",
+            "Weekday Timings": "09:30 AM - 10:00 AM",
+            "Phone": "9246266738",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE075",
+            "Registration Url": "aolt.in/560455",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Ravinder Bonala(TS0202)",
+            "Start Date": "22-May-21",
+            "End Date": "24-May-21",
+            "Weekday Timings": "07:30 AM - 08:15 AM",
+            "Weekend Timings": "07:30 AM - 08:15 AM",
+            "Phone": "9949886963",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE050",
+            "Registration Url": "aolt.in/559820",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Suresh G.(AP0275)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "05:00 PM - 06:00 PM",
+            "Phone": "8500817596",
+            "Languages": "Hindi"
+        },
+        {
+            "ID": "0KE049",
+            "Registration Url": "aolt.in/559818",
+            "ProgramName": "Immunity Enhancement",
+            "Teachers": "Suresh G.(AP0275)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "10:00 AM - 11:00 AM",
+            "Phone": "8500817596",
+            "Languages": "Hindi"
+        },
+        {
+            "ID": "0KE020",
+            "Registration Url": "aolt.in/559017",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Kamtam Sunitha(AP0464)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "04:30 PM - 05:00 PM",
+            "Phone": "9985430555",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE016",
+            "Registration Url": "aolt.in/558938",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Madhukar Sistla(TS0108)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "9177905078",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE003",
+            "Registration Url": "aolt.in/558759",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Nagesh Gupta(TS0147)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "7416408345",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD996",
+            "Registration Url": "aolt.in/558591",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Tippani Manjula(AP0137), Malathi Ramachandran(AP0324), Nagamani Nalamala(AP0034)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "10:30 AM - 11:00 AM",
+            "Phone": "9848124598",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD987",
+            "Registration Url": "aolt.in/558412",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Mahesh Mamilla(TS0118), Shailaja Borpatla(TS0013)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "11:15 AM - 12:00 PM",
+            "Phone": "7675975250",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KD958",
+            "Registration Url": "aolt.in/557782",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Sajitha V.(KL0046)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "05:00 PM - 05:30 PM",
+            "Phone": "9849021716",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD904",
+            "Registration Url": "aolt.in/556662",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Chandana Gopal(AP0165)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "06:30 PM - 07:00 PM",
+            "Phone": "9666140285",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD866",
+            "Registration Url": "aolt.in/556025",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Shalini Sharma(MH3960), Nischala K(TS0106)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "07:30 AM - 08:00 AM",
+            "Phone": "9515100379",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD863",
+            "Registration Url": "aolt.in/555974",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Pillalamarri Venkateswarlu(GJ0436)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "07:00 AM - 08:00 AM",
+            "Phone": "9866092343",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KD854",
+            "Registration Url": "aolt.in/555881",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "14-Jun-21",
+            "End Date": "16-Jun-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD788",
+            "Registration Url": "aolt.in/554866",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "11-Jun-21",
+            "End Date": "13-Jun-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD785",
+            "Registration Url": "aolt.in/554854",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "7-Jun-21",
+            "End Date": "9-Jun-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD779",
+            "Registration Url": "aolt.in/554803",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "4-Jun-21",
+            "End Date": "6-Jun-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD776",
+            "Registration Url": "aolt.in/554797",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "31-May-21",
+            "End Date": "2-Jun-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD773",
+            "Registration Url": "aolt.in/554794",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "28-May-21",
+            "End Date": "30-May-21",
+            "Weekday Timings": "04:30 PM - 05:00 PM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD770",
+            "Registration Url": "aolt.in/554790",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD749",
+            "Registration Url": "aolt.in/554255",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "DHARMENDRA CHAUHAN(TS0046)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "06:30 PM - 07:00 PM",
+            "Phone": "9703346600",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD608",
+            "Registration Url": "aolt.in/552255",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Lakshmi A. G.(AP0255), Lakshmi Nanduri(AP0414)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "10:00 AM - 10:30 AM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE154",
+            "Registration Url": "aolt.in/562163",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Nikhila Kongara(AP0238), Karuna Munshi(TS0115)",
+            "Start Date": "31-May-21",
+            "End Date": "02-Jun-21",
+            "Weekday Timings": "03:00 PM - 04:00 PM",
+            "Phone": "9618403374",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE151",
+            "Registration Url": "aolt.in/562117",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Venkata Syam(AP0279), Veena Srinivasan(AP0184), Sharada Krishnamurthy(AP0082), Prasoon Kumari(JR0075)",
+            "Start Date": "27-May-21",
+            "End Date": "29-May-21",
+            "Weekday Timings": "10:30 AM - 11:00 AM",
+            "Phone": "7901274813",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE149",
+            "Registration Url": "aolt.in/562107",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Venkata Syam(AP0279), Sharada Krishnamurthy(AP0082), Veena Srinivasan(AP0184), Prasoon Kumari(JR0075)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "10:30 AM - 11:00 AM",
+            "Phone": "7901274813",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE141",
+            "Registration Url": "aolt.in/561873",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Sonal Shah(AP0254), Shilpa Rana(TS0111), Sanjaykumar Shah(AP0169), Samarth Rathi(AP0246), Shruti Rathi(AP0478), SHOBHA RATHI(AP0033), Jugal Rathi(AP0058), Neha Rathi(AP0050)",
+            "Start Date": "28-May-21",
+            "End Date": "30-May-21",
+            "Weekday Timings": "05:00 PM - 05:45 PM",
+            "Phone": "9908846321",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KE136",
+            "Registration Url": "aolt.in/561754",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Vani P.(MH0960)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "09:00 AM - 09:45 AM",
+            "Phone": "9133425739",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE124",
+            "Registration Url": "aolt.in/561571",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Nikhila Kongara(AP0238), Karuna Munshi(TS0115)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "03:00 PM - 04:00 PM",
+            "Phone": "9618403374",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE121",
+            "Registration Url": "aolt.in/561454",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Singar Srinivas Sagar(TS0176)",
+            "Start Date": "22-May-21",
+            "End Date": "24-May-21",
+            "Weekday Timings": "04:00 PM - 05:00 PM",
+            "Phone": "7981143904",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE119",
+            "Registration Url": "aolt.in/561408",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Puritipati Bhargavi(TS0088)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Weekend Timings": "07:00 PM - 07:30 PM",
+            "Phone": "8790731447",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE116",
+            "Registration Url": "aolt.in/561352",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Yashika Taneja(TS0181), Dipika Khanna(TS0166)",
+            "Start Date": "28-May-21",
+            "End Date": "30-May-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Weekend Timings": "11:00 AM - 11:45 AM",
+            "Phone": "7013086863",
+            "Languages": "Hindi"
+        },
+        {
+            "ID": "0KE106",
+            "Registration Url": "aolt.in/561165",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Vandana P.(AP0309)",
+            "Start Date": "23-May-21",
+            "End Date": "25-May-21",
+            "Weekday Timings": "06:00 PM - 06:45 PM",
+            "Phone": "9100245616",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE101",
+            "Registration Url": "aolt.in/561127",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Uma C(TS0051)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "06:00 AM - 06:45 AM",
+            "Phone": "9440196185",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE098",
+            "Registration Url": "aolt.in/560980",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Niveditha Samudrala(KR1213), Sravan reddy(TS0052)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Phone": "8639574251",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE074",
+            "Registration Url": "aolt.in/560401",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Swetha Mekala(TS0003), Archana Saluja(UP0660)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "05:00 PM - 05:30 PM",
+            "Phone": "9959885476",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KE070",
+            "Registration Url": "aolt.in/560395",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Swetha Mekala(TS0003), Archana Saluja(UP0660)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "05:00 PM - 05:30 PM",
+            "Phone": "9959885476",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KE069",
+            "Registration Url": "aolt.in/560378",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Priyanka Kumbharageri(S00027)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "11:00 AM - 11:30 AM",
+            "Phone": "8019740466",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE061",
+            "Registration Url": "aolt.in/560054",
+            "ProgramName": "Covid Recovery",
+            "Teachers": "Manas Ram(TS0053), Priyanka Kumbharageri(S00027), Anuraag Srinivas(S00061)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "05:00 PM - 05:30 PM",
+            "Weekend Timings": "05:00 PM - 05:30 PM",
+            "Phone": "9441102830",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE033",
+            "Registration Url": "aolt.in/559445",
+            "ProgramName": "Post Covid",
+            "Teachers": "Tirunahari Prasad(AP0369), Sravan reddy(TS0052)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "05:00 PM - 05:45 PM",
+            "Phone": "8639574251",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE021",
+            "Registration Url": "aolt.in/559018",
+            "ProgramName": "Post Covid",
+            "Teachers": "Kamtam Sunitha(AP0464)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "04:30 PM - 05:00 PM",
+            "Phone": "9985430555",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE017",
+            "Registration Url": "aolt.in/558940",
+            "ProgramName": "Post Covid",
+            "Teachers": "Madhukar Sistla(TS0108)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "08:00 PM - 08:30 PM",
+            "Phone": "9177905078",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE011",
+            "Registration Url": "aolt.in/558856",
+            "ProgramName": "Post Covid",
+            "Teachers": "Loveneet Aggarwal(AP0541)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "07:00 AM - 07:30 AM",
+            "Phone": "9866769358",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE002",
+            "Registration Url": "aolt.in/558627",
+            "ProgramName": "Post Covid",
+            "Teachers": "Sumathi Pathapati(KR0676)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "08:00 AM - 08:45 AM",
+            "Phone": "8237531174",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD997",
+            "Registration Url": "aolt.in/558593",
+            "ProgramName": "Post Covid",
+            "Teachers": "Malathi Ramachandran(AP0324), Tippani Manjula(AP0137), Nagamani Nalamala(AP0034)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "11:30 AM - 12:00 PM",
+            "Phone": "9848124598",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD988",
+            "Registration Url": "aolt.in/558414",
+            "ProgramName": "Post Covid",
+            "Teachers": "Mahesh Mamilla(TS0118), Shailaja Borpatla(TS0013)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "05:00 PM - 05:45 PM",
+            "Phone": "7675975250",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KD972",
+            "Registration Url": "aolt.in/557959",
+            "ProgramName": "Post Covid",
+            "Teachers": "Rahul Singh(AP0425)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "10:30 AM - 11:15 AM",
+            "Weekend Timings": "10:30 AM - 11:15 AM",
+            "Phone": "9581567700",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD967",
+            "Registration Url": "aolt.in/557882",
+            "ProgramName": "Post Covid",
+            "Teachers": "Shilpa Aneja(AP0422)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "9985123813",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD942",
+            "Registration Url": "aolt.in/557582",
+            "ProgramName": "Post Covid",
+            "Teachers": "Ramesh Kasturi(AP0131)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "05:30 PM - 06:00 PM",
+            "Phone": "9848242467",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD903",
+            "Registration Url": "aolt.in/556657",
+            "ProgramName": "Post Covid",
+            "Teachers": "Chandana Gopal(AP0165)",
+            "Start Date": "19-May-21",
+            "End Date": "21-May-21",
+            "Weekday Timings": "05:30 PM - 06:00 PM",
+            "Phone": "9666140285",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD894",
+            "Registration Url": "aolt.in/556578",
+            "ProgramName": "Post Covid",
+            "Teachers": "Swarnalatha K.(AP0097)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "10:45 AM - 12:30 AM",
+            "Weekend Timings": "10:45 AM - 12:30 AM",
+            "Phone": "8686046273",
+            "Languages": "Hindi,Telugu"
+        },
+        {
+            "ID": "0KD871",
+            "Registration Url": "aolt.in/556090",
+            "ProgramName": "Post Covid",
+            "Teachers": "Dolly Kharbanda(TS0206)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "06:30 PM - 07:00 PM",
+            "Phone": "8814821125",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD867",
+            "Registration Url": "aolt.in/556030",
+            "ProgramName": "Post Covid",
+            "Teachers": "Shalini Sharma(MH3960), Nischala K(TS0106)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "08:30 AM - 09:00 AM",
+            "Phone": "9515100379",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD855",
+            "Registration Url": "aolt.in/555883",
+            "ProgramName": "Post Covid",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "14-Jun-21",
+            "End Date": "16-Jun-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD835",
+            "Registration Url": "aolt.in/555630",
+            "ProgramName": "Post Covid",
+            "Teachers": "Mohit Sanjeev(TS0135), Arya Singh(TS0138)",
+            "Start Date": "29-May-21",
+            "End Date": "31-May-21",
+            "Weekday Timings": "08:30 AM - 09:00 AM",
+            "Weekend Timings": "08:30 AM - 09:00 AM",
+            "Phone": "9900640182",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD834",
+            "Registration Url": "aolt.in/555622",
+            "ProgramName": "Post Covid",
+            "Teachers": "Mohit Sanjeev(TS0135), Arya Singh(TS0138)",
+            "Start Date": "26-May-21",
+            "End Date": "28-May-21",
+            "Weekday Timings": "08:30 AM - 09:00 AM",
+            "Weekend Timings": "08:30 AM - 09:00 AM",
+            "Phone": "9550992920",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD832",
+            "Registration Url": "aolt.in/555613",
+            "ProgramName": "Post Covid",
+            "Teachers": "Mohit Sanjeev(TS0135), Arya Singh(TS0138)",
+            "Start Date": "23-May-21",
+            "End Date": "25-May-21",
+            "Weekday Timings": "08:30 AM - 09:00 AM",
+            "Weekend Timings": "08:30 AM - 09:00 AM",
+            "Phone": "9900640182",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD831",
+            "Registration Url": "aolt.in/555607",
+            "ProgramName": "Post Covid",
+            "Teachers": "Arya Singh(TS0138)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "08:30 AM - 09:00 AM",
+            "Weekend Timings": "08:30 AM - 09:00 AM",
+            "Phone": "9550992920",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD789",
+            "Registration Url": "aolt.in/554868",
+            "ProgramName": "Post Covid",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "11-Jun-21",
+            "End Date": "13-Jun-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD786",
+            "Registration Url": "aolt.in/554855",
+            "ProgramName": "Post Covid",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "7-Jun-21",
+            "End Date": "9-Jun-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD780",
+            "Registration Url": "aolt.in/554805",
+            "ProgramName": "Post Covid",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "4-Jun-21",
+            "End Date": "6-Jun-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD777",
+            "Registration Url": "aolt.in/554798",
+            "ProgramName": "Post Covid",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "31-May-21",
+            "End Date": "2-Jun-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD774",
+            "Registration Url": "aolt.in/554795",
+            "ProgramName": "Post Covid",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "28-May-21",
+            "End Date": "30-May-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD771",
+            "Registration Url": "aolt.in/554791",
+            "ProgramName": "Post Covid",
+            "Teachers": "Lakshmi Nanduri(AP0414)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KD750",
+            "Registration Url": "aolt.in/554256",
+            "ProgramName": "Post Covid",
+            "Teachers": "DHARMENDRA CHAUHAN(TS0046)",
+            "Start Date": "20-May-21",
+            "End Date": "22-May-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "9703346600",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KD454",
+            "Registration Url": "aolt.in/549136",
+            "ProgramName": "Post Covid",
+            "Teachers": "Lakshmi A. G.(AP0255), Lakshmi Nanduri(AP0414)",
+            "Start Date": "21-May-21",
+            "End Date": "23-May-21",
+            "Weekday Timings": "07:00 PM - 07:30 PM",
+            "Phone": "9849800968",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE160",
+            "Registration Url": "aolt.in/562283",
+            "ProgramName": "Post Covid",
+            "Teachers": "Kranti Y.(AP0019)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "07:00 PM - 07:45 PM",
+            "Phone": "9866477876",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE156",
+            "Registration Url": "aolt.in/562217",
+            "ProgramName": "Post Covid",
+            "Teachers": "Nikhila Kongara(AP0238), Karuna Munshi(TS0115)",
+            "Start Date": "31-May-21",
+            "End Date": "02-Jun-21",
+            "Weekday Timings": "04:30 PM - 05:30 PM",
+            "Phone": "9618403374",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE153",
+            "Registration Url": "aolt.in/562119",
+            "ProgramName": "Post Covid",
+            "Teachers": "Venkata Syam(AP0279), Veena Srinivasan(AP0184), Sharada Krishnamurthy(AP0082), Prasoon Kumari(JR0075)",
+            "Start Date": "27-May-21",
+            "End Date": "29-May-21",
+            "Weekday Timings": "11:15 AM - 11:45 AM",
+            "Phone": "7901274813",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE150",
+            "Registration Url": "aolt.in/562113",
+            "ProgramName": "Post Covid",
+            "Teachers": "Venkata Syam(AP0279), Veena Srinivasan(AP0184), Sharada Krishnamurthy(AP0082), Prasoon Kumari(JR0075)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "11:15 AM - 11:45 AM",
+            "Phone": "7901274813",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE144",
+            "Registration Url": "aolt.in/561883",
+            "ProgramName": "Post Covid",
+            "Teachers": "Sripathi Sripada(AP0120)",
+            "Start Date": "23-May-21",
+            "End Date": "25-May-21",
+            "Weekday Timings": "07:00 PM - 07:45 PM",
+            "Phone": "7032304741",
+            "Languages": "Telugu"
+        },
+        {
+            "ID": "0KE143",
+            "Registration Url": "aolt.in/561876",
+            "ProgramName": "Post Covid",
+            "Teachers": "Sonal Shah(AP0254), Samarth Rathi(AP0246), Sanjaykumar Shah(AP0169), Shruti Rathi(AP0478), Shilpa Rana(TS0111), Neha Rathi(AP0050)",
+            "Start Date": "28-May-21",
+            "End Date": "30-May-21",
+            "Weekday Timings": "06:00 PM - 06:45 PM",
+            "Phone": "9908846321",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KE138",
+            "Registration Url": "aolt.in/561762",
+            "ProgramName": "Post Covid",
+            "Teachers": "Neelesh Naik(AP0110)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "05:30 PM - 06:15 PM",
+            "Phone": "9963167333",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE137",
+            "Registration Url": "aolt.in/561756",
+            "ProgramName": "Post Covid",
+            "Teachers": "Siva T.(AP0162), Vani P.(MH0960)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "08:00 AM - 08:45 AM",
+            "Phone": "9133425739",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE126",
+            "Registration Url": "aolt.in/561612",
+            "ProgramName": "Post Covid",
+            "Teachers": "Bina Ramgopal(AP0247), SUPRIYA Ramgopal(TS0121), Vijaya Lakshmi Mylavarapu(TS0180)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "06:00 PM - 06:45 PM",
+            "Phone": "8179231632",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE123",
+            "Registration Url": "aolt.in/561471",
+            "ProgramName": "Post Covid",
+            "Teachers": "Sunita Singh(TS0057), Rahul Singh(AP0425)",
+            "Start Date": "22-May-21",
+            "End Date": "24-May-21",
+            "Weekday Timings": "10:00 AM - 10:30 AM",
+            "Weekend Timings": "10:00 AM - 10:30 AM",
+            "Phone": "9581567700",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KE122",
+            "Registration Url": "aolt.in/561455",
+            "ProgramName": "Post Covid",
+            "Teachers": "Chandana Gopal(AP0165)",
+            "Start Date": "25-May-21",
+            "End Date": "27-May-21",
+            "Weekday Timings": "04:30 PM - 05:00 PM",
+            "Phone": "9666140285",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KE120",
+            "Registration Url": "aolt.in/561409",
+            "ProgramName": "Post Covid",
+            "Teachers": "Puritipati Bhargavi(TS0088)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "08:00 PM - 08:30 PM",
+            "Weekend Timings": "08:00 PM - 08:30 PM",
+            "Phone": "8790731447",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE117",
+            "Registration Url": "aolt.in/561357",
+            "ProgramName": "Post Covid",
+            "Teachers": "Yashika Taneja(TS0181), Dipika Khanna(TS0166)",
+            "Start Date": "28-May-21",
+            "End Date": "30-May-21",
+            "Weekday Timings": "04:00 PM - 04:30 PM",
+            "Weekend Timings": "04:00 PM - 04:45 PM",
+            "Phone": "7013086863",
+            "Languages": "Hindi"
+        },
+        {
+            "ID": "0KE115",
+            "Registration Url": "aolt.in/561341",
+            "ProgramName": "Post Covid",
+            "Teachers": "Sunita Sunil Mali(TS0100), Sunil Mali(TS0178), Babasaheb Khairnar(AP0522)",
+            "Start Date": "23-May-21",
+            "End Date": "25-May-21",
+            "Weekday Timings": "10:00 AM - 10:45 AM",
+            "Phone": "9505157473",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE108",
+            "Registration Url": "aolt.in/561235",
+            "ProgramName": "Post Covid",
+            "Teachers": "Nitika Seth(AP0326)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "06:15 PM - 06:45 PM",
+            "Phone": "9052145000",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE103",
+            "Registration Url": "aolt.in/561131",
+            "ProgramName": "Post Covid",
+            "Teachers": "Uma C(TS0051)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "07:00 PM - 07:45 PM",
+            "Phone": "9440196185",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KE096",
+            "Registration Url": "aolt.in/560974",
+            "ProgramName": "Post Covid",
+            "Teachers": "Tirunahari Prasad(AP0369), Manisha D. Khandelwal(MH3480)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "05:00 PM - 05:45 PM",
+            "Phone": "8639574251",
+            "Languages": "English,Hindi"
+        },
+        {
+            "ID": "0KE095",
+            "Registration Url": "aolt.in/560970",
+            "ProgramName": "Post Covid",
+            "Teachers": "Tirunahari Prasad(AP0369), Niveditha Samudrala(KR1213), Sravan reddy(TS0052)",
+            "Start Date": "24-May-21",
+            "End Date": "26-May-21",
+            "Weekday Timings": "07:00 AM - 07:45 AM",
+            "Phone": "8639574251",
+            "Languages": "English,Telugu"
+        },
+        {
+            "ID": "0KE067",
+            "Registration Url": "aolt.in/560336",
+            "ProgramName": "Post Covid",
+            "Teachers": "Raman Venkatachalam(AP0602), Lata Venkatachalam(AP0323)",
+            "Start Date": "28-May-21",
+            "End Date": "30-May-21",
+            "Weekday Timings": "05:30 PM - 06:15 PM",
+            "Weekend Timings": "05:30 PM - 06:15 PM",
+            "Phone": "9885267247",
+            "Languages": "English"
+        },
+        {
+            "ID": "0KD894",
+            "Registration Url": "aolt.in/556578",
+            "ProgramName": "Post Covid",
+            "Teachers": "Swarnalatha K.(AP0097)",
+            "Start Date": "22-May-21",
+            "End Date": "24-May-21",
+            "Weekday Timings": "10:45 AM - 12:30 PM",
+            "Weekend Timings": "10:45 AM - 12:30 AM",
+            "Phone": "8686046273",
+            "Languages": "Hindi,Telugu"
+        }
+		]		
+
 var row_data = ''; 
-for (var i = 0; i < local_data.length; i++) { 
+for (var i = 0; i < courses_data.length; i++) { 
+let teachers = []
+for(let user of courses_data[i].Teachers.split(',')){
+	teachers.push( user.split('(')[0])
+}
   var row_data = row_data + '<tr>' + 
-	' <td><b>' + local_data[i]['Start Date'] + ' - ' + local_data[i]['End Date'] + '</b><small class="d-block">' + local_data[i]['Weekday Timings'] +'</small></td>' + 
-	' <td><b>' + '' +  'Program -<br/> Meditation, Breath and Yoga</b></td>' + 
-	' <td>' + local_data[i].Teachers.split(',') + ' <br/><small class="d-block">Online <br/>Course Language : '+ local_data[i].Languages+ '</small></td>' + 
-	' <td> <div class="field-item even"><p style="text-align: center;"><a href="https://www.' + local_data[i]["Registration Url"] +
-						'" target="_blank" class="btn rounded high-index bg-color text-white text-wrap ls1 py-2 px-4">Register_Now</a></p></div></td>' + 
+	' <td><b>' + courses_data[i]['Start Date'] + ' - ' + courses_data[i]['End Date'] + '</b><small class="d-block">' + courses_data[i]['Weekday Timings'] +'</small></td>' + 
+	' <td><b>' + courses_data[i]['ProgramName'] +  ' Program -<br/> Meditation, Breath and Yoga</b></td>' + 
+	' <td>' + teachers.join('<br/>') + '<small class="d-block"><b>Course Language :</b> '+ courses_data[i].Languages+ '</small></td>' + 
+	' <td> <div class="field-item even"><a href="https://www.' + courses_data[i]["Registration Url"] +
+						'" target="_blank" class="btn rounded high-index bg-color text-white text-wrap ls1 py-2 px-4">Register</a></div></td>' + 
 	'</tr>'; 
 } 
 var table_body_element = document.createElement('tbody'); 
 table_body_element.innerHTML = row_data; 
 document.getElementById('my_table2').appendChild(table_body_element); 
 </script>
-        </table>
-      </div>
-
-
-							
-							</div>
-					</div>
-				</div>
+</table></div></div></div></div>
 				
 <script>
-//var courses_data = JSON.parse("data.json");
-//var courses_data = data
-//console.log('============= courses_data ================',courses_data)
 </script>
-
-
-<script> 
-
-let data = [
-        {
-            "ID": "0KE034",
-            "Registration Url": "aolt.in/559447",
-            "Teachers": "Jalaja Reddy Muthyala(TS0123), Sailaja Reddy Epur(TS0192), Padma Pulluru(TS0193), SANDHYA RANI(TS0128)",
-            "Start Date": "19-May-21",
-            "End Date": "21-May-21",
-            "Weekday Timings": "12:00 PM - 12:30 PM",
-            "Phone": "9618448199",
-            "Languages": "Telugu"
-        },
-        {
-            "ID": "0KE032",
-            "Registration Url": "aolt.in/559444",
-            "Teachers": "Tirunahari Prasad(AP0369), Sravan reddy(TS0052)",
-            "Start Date": "20-May-21",
-            "End Date": "22-May-21",
-            "Weekday Timings": "06:30 PM - 07:15 PM",
-            "Phone": "8639574251",
-            "Languages": "English,Telugu"
-        },
-        {
-            "ID": "0KE031",
-            "Registration Url": "aolt.in/559329",
-            "Teachers": "Parankusham Swamy(TS0109)",
-            "Start Date": "20-May-21",
-            "End Date": "22-May-21",
-            "Weekday Timings": "07:30 PM - 08:15 PM",
-            "Phone": "7730073444",
-            "Languages": "English,Telugu"
-        },
-        {
-            "ID": "0KE027",
-            "Registration Url": "aolt.in/559155",
-            "Teachers": "Naveen Kolli(TS0163)",
-            "Start Date": "19-May-21",
-            "End Date": "21-May-21",
-            "Weekday Timings": "06:30 AM - 07:15 AM",
-            "Phone": "9985104123",
-            "Languages": "English"
-        },
-        {
-            "ID": "0KE026",
-            "Registration Url": "aolt.in/559143",
-            "Teachers": "Kiran Pedamallu(TS0164)",
-            "Start Date": "21-May-21",
-            "End Date": "23-May-21",
-            "Weekday Timings": "08:30 AM - 09:00 AM",
-            "Phone": "7702214598",
-            "Languages": "English"
-        },
-        {
-            "ID": "0KE015",
-            "Registration Url": "aolt.in/558935",
-            "Teachers": "Madhukar Sistla(TS0108)",
-            "Start Date": "20-May-21",
-            "End Date": "22-May-21",
-            "Weekday Timings": "06:00 PM - 06:30 PM",
-            "Phone": "9177905078",
-            "Languages": "English"
-        },
-        {
-            "ID": "0KE013",
-            "Registration Url": "aolt.in/558863",
-            "Teachers": "Shashi Mehta(AP0168), Sainath Bommalakunta(TS0030)",
-            "Start Date": "24-May-21",
-            "End Date": "26-May-21",
-            "Weekday Timings": "07:00 PM - 07:45 PM",
-            "Phone": "8142358165",
-            "Languages": "English"
-        }]
-var local_data = data; 
-var row_data = ''; 
-for (var i = 0; i < local_data.length; i++) { 
-  var row_data = row_data + '<tr>' + 
-	' <td><b>' + local_data[i]['Start Date'] + ' - ' + local_data[i]['End Date'] + '</b><small class="d-block">' + local_data[i]['Weekday Timings'] +'</small></td>' + 
-	' <td><b>' + '' +  'Program -<br/> Meditation, Breath and Yoga</b></td>' + 
-	' <td>' + local_data[i].Teachers.split(',') + ' <br/><small class="d-block">Online <br/>Course Language : '+ local_data[i].Languages+ '</small></td>' + 
-	' <td> <div class="field-item even"><p style="text-align: center;"><a href="https://www.' + local_data[i]["Registration Url"] +
-						'" target="_blank" class="btn rounded high-index bg-color text-white text-wrap ls1 py-2 px-4">Register_Now</a></p></div></td>' + 
-	'</tr>'; 
-} 
-var table_body_element = document.createElement('tbody'); 
-table_body_element.innerHTML = row_data; 
-document.getElementById('my_table').appendChild(table_body_element); 
-</script>
-				
-
-				
-
 				<div class="section mb-0 bg-transparent">
 					<div class="container">
 						<div class="row align-items-center">
@@ -447,10 +1762,7 @@ document.getElementById('my_table').appendChild(table_body_element);
 	============================================= -->
 	<div id="gotoTop" class="icon-angle-up"></div>
 
-	<!-- JavaScripts
-	============================================= -->
-	<script src="js/jquery.js"></script>
-	<script src="js/plugins.min.js"></script>
+
 
 	<!-- For Countdown -->
 	<script src="js/components/moment.js"></script>

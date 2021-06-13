@@ -14768,6 +14768,10 @@ input.switch-flat-xlarge.switch-toggle-flat:checked + label::after { margin-left
 
 .table .danger { color: #a94442; }
 
+.btn {
+	border-radius: 20px !important;
+}
+
 .btn-link,
 .page-link,
 .page-link:hover,
@@ -16230,3 +16234,48 @@ label.checkbox { padding-left: 20px; }
 	animation-name: fadeOutUpSmall;
 }
 
+
+.radio-label {
+    cursor: pointer !important;
+    background: #fdda2ff7 !important;
+    padding: 10px 20px !important;
+	margin-right: 25px;
+    border-radius: 30px !important;
+	font: 500 13.3333px Arial !important;
+    font-size: 17px !important;	
+	font-family: 'Gotham Narrow Medium' !important;
+    vertical-align: baseline !important;    
+    display: inline-block !important;
+    text-transform: inherit;	
+	
+	/*display: flex; */
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 0.375em;
+	
+	
+	span {
+		display: flex;
+		align-items: center;
+		padding: 0.375em 0.75em 0.375em 0.375em;
+		border-radius: 99em; // or something higher...
+		transition: 0.25s ease;
+		&:hover {
+			background-color: #525248;
+		}
+		&:before {
+			display: flex;
+			flex-shrink: 0;
+			content: "";
+			background-color: #fff;
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 50%;
+			margin-right: 0.375em;
+			transition: 0.25s ease;
+			box-shadow: inset 0 0 0 0.125em $primary-color;
+		}
+	}
+	
+    
+}

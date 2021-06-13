@@ -191,11 +191,17 @@
 						<div class="heading-block border-bottom-0 bottommargin-lg" style="max-width: 700px">
 							<h2 class="font-weight-bold mb-2 nott" style="font-size: 42px; letter-spacing: -1px">Free Covid care programs <span>Schedule</span>.</h2>
 							<p class="lead">Upcoming Free Covid Care Online Program Dates & Timings. Choose a slot that best suits your schedule</p>
+						</div>						
+						<div class="radio-container">
+							<form>
+								<label class="radio-label"><input type="radio" name="radio" id="all_programs" onClick="updateCourses()" checked/><span>All</span></label>
+								<label class="radio-label"><input type="radio" name="radio" id="all_enhancement" onClick="updateCourses()" /><span>Immunity Enhancement</span></label>
+								<label class="radio-label"><input type="radio" name="radio" id="all_recovery" onClick="updateCourses()"/><span>Covid Recovery</span></label>
+								<label class="radio-label"><input type="radio" name="radio" id="all_postCovid" onClick="updateCourses()" /><span>Post Covid</span></label>
+							</form>
 						</div>
-						<div class="row justify-content-between">
-							
-							<div class="table-responsive custom-table-responsive">
-
+			<div class="row justify-content-between">							
+				<div class="table-responsive custom-table-responsive">
         <table class="table custom-table" id="my_table2">
           <thead>
             <tr>
@@ -207,18 +213,18 @@
           </thead>
           <script> 
 
-let courses_data = [
-        {
-            "ID": "0KE034",
-            "Registration Url": "aolt.in/559447",
-            "ProgramName": "Immunity Enhancement",
-            "Teachers": "Jalaja Reddy Muthyala(TS0123), Sailaja Reddy Epur(TS0192), Padma Pulluru(TS0193), SANDHYA RANI(TS0128)",
-            "Start Date": "4-Jun-21",
-            "End Date": "6-Jun-21",
-            "Weekday Timings": "12:00 PM - 12:30 PM",
-            "Phone": "9618448199",
-            "Languages": "Telugu"
-        },
+let raw_courses_data = [
+			{
+				"ID": "0KE034",
+				"Registration Url": "aolt.in/559447",
+				"ProgramName": "Immunity Enhancement",
+				"Teachers": "Jalaja Reddy Muthyala(TS0123), Sailaja Reddy Epur(TS0192), Padma Pulluru(TS0193), SANDHYA RANI(TS0128)",
+				"Start Date": "4-Jun-21",
+				"End Date": "6-Jun-21",
+				"Weekday Timings": "12:00 PM - 12:30 PM",
+				"Phone": "9618448199",
+				"Languages": "Telugu"
+			},
         {
             "ID": "0KE032",
             "Registration Url": "aolt.in/559444",
@@ -2671,33 +2677,82 @@ let courses_data = [
         }
     ]
 
+</script>
+
+<script>
+
 function formatDate(date){
 let current_date = new Date(date)
 const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 return current_date.getDate() + "-" + months[current_date.getMonth()] + "-" + current_date.getFullYear()
 }
 
-var row_data = ''; 
-for (var i = 0; i < courses_data.length; i++) { 
-	if (new Date(courses_data[i]['Start Date']) < new Date()){
-	continue
-	}
-	let teachers = []
-	for(let user of courses_data[i].Teachers.split(',')){
-		teachers.push( user.split('(')[0])
-	}
-	var languages = courses_data[i].Languages ? courses_data[i].Languages : ''
-	  var row_data = row_data + '<tr>' + 
-		' <td><b>' + formatDate(courses_data[i]['Start Date']) + ' - ' + formatDate(courses_data[i]['End Date']) + '</b><small class="d-block">' + courses_data[i]['Weekday Timings'] +'</small></td>' + 
-		' <td><b>' + courses_data[i]['ProgramName'] +  ' Program -<br/> Meditation, Breath and Yoga</b></td>' + 
-		' <td>' + teachers.join('<br/>') + '<small class="d-block"><b>Course Language :</b> '+ languages  + '</small></td>' + 
-		' <td> <div class="field-item even"><a href="https://www.' + courses_data[i]["Registration Url"] +
-							'" target="_blank" class="btn rounded high-index bg-color text-white text-wrap ls1 py-2 px-4">Register</a></div></td>' + 
-		'</tr>'; 
-} 
-var table_body_element = document.createElement('tbody'); 
-table_body_element.innerHTML = row_data; 
-document.getElementById('my_table2').appendChild(table_body_element); 
+let courses_data = raw_courses_data
+
+function updateCourses(){		
+		if(document.getElementById("all_programs").checked === true)
+			courses_data = raw_courses_data			
+		if(document.getElementById("all_enhancement").checked === true)
+			courses_data = raw_courses_data.filter(item=> item.ProgramName == 'Immunity Enhancement')
+		if(document.getElementById("all_recovery").checked === true)
+			courses_data = raw_courses_data.filter(item=> item.ProgramName == 'Covid Recovery')
+		if(document.getElementById("all_postCovid").checked === true)
+			courses_data = raw_courses_data.filter(item=> item.ProgramName == 'Post Covid')
+			
+		courses_data.sort((a, b) => (a['Start Date'] > b['Start Date']) ? 1: -1  )
+		var row_data = ''; 
+		for (var i = 0; i < courses_data.length; i++) { 
+			if (new Date(courses_data[i]['Start Date']) < new Date()){
+			continue
+			}
+
+			let teachers = []
+			for(let user of courses_data[i].Teachers.split(',')){
+				teachers.push( user.split('(')[0])
+			}
+			var languages = courses_data[i].Languages ? courses_data[i].Languages : ''
+			  var row_data = row_data + '<tr>' + 
+				' <td><b>' + formatDate(courses_data[i]['Start Date']) + ' - ' + formatDate(courses_data[i]['End Date']) + '</b><small class="d-block">' + courses_data[i]['Weekday Timings'] +'</small></td>' + 
+				' <td><b>' + courses_data[i]['ProgramName'] +  ' Program -<br/> Meditation, Breath and Yoga</b></td>' + 
+				' <td>' + teachers.join('<br/>') + '<small class="d-block"><b>Course Language :</b> '+ languages  + '</small></td>' + 
+				' <td> <div class="field-item even"><a href="https://www.' + courses_data[i]["Registration Url"] +
+									'" target="_blank" class="btn rounded high-index bg-color text-white text-wrap ls1 py-2 px-4">Register</a></div></td>' + 
+				'</tr>'; 
+		} 
+		
+		let old_table_body_element = document.getElementsByTagName('tbody')
+		if (old_table_body_element && old_table_body_element[0])
+			old_table_body_element[0].remove()
+		var table_body_element = document.createElement('tbody'); 
+		table_body_element.innerHTML = row_data; 
+		document.getElementById('my_table2').appendChild(table_body_element); 		
+		
+}
+
+	var row_data = ''; 
+
+	courses_data.sort((a, b) => (a['Start Date'] > b['Start Date']) ? 1: (a['Start Date'] === b['Start Date']) ? ((a.ProgramName > b.ProgramName) ? 1: -1) : -1  )
+	for (var i = 0; i < courses_data.length; i++) { 
+		if (new Date(courses_data[i]['Start Date']) < new Date()){
+		continue
+		}
+
+		let teachers = []
+		for(let user of courses_data[i].Teachers.split(',')){
+			teachers.push( user.split('(')[0])
+		}
+		var languages = courses_data[i].Languages ? courses_data[i].Languages : ''
+		  var row_data = row_data + '<tr>' + 
+			' <td><b>' + formatDate(courses_data[i]['Start Date']) + ' - ' + formatDate(courses_data[i]['End Date']) + '</b><small class="d-block">' + courses_data[i]['Weekday Timings'] +'</small></td>' + 
+			' <td><b>' + courses_data[i]['ProgramName'] +  ' Program -<br/> Meditation, Breath and Yoga</b></td>' + 
+			' <td>' + teachers.join('<br/>') + '<small class="d-block"><b>Course Language :</b> '+ languages  + '</small></td>' + 
+			' <td> <div class="field-item even"><a href="https://www.' + courses_data[i]["Registration Url"] +
+								'" target="_blank" class="btn rounded high-index bg-color text-white text-wrap ls1 py-2 px-4">Register</a></div></td>' + 
+			'</tr>'; 
+		} 
+	var table_body_element = document.createElement('tbody'); 
+	table_body_element.innerHTML = row_data; 
+	document.getElementById('my_table2').appendChild(table_body_element); 
 </script>
 </table></div></div></div></div>
 				
